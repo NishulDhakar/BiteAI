@@ -12,7 +12,6 @@ export const useGoogleAuth = () => {
     const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
-    // We use useUser to potentially get data if needed, but primarily we rely on the flow response
 
     const signInWithGoogle = useCallback(async () => {
         try {
@@ -23,8 +22,6 @@ export const useGoogleAuth = () => {
                 // Activate the session
                 await setActive!({ session: createdSessionId });
 
-                // Data sync is now handled by UserSyncProvider
-                // which listens to the auth state change.
                 router.replace("/");
             } else {
                 // Implement logic for incomplete flows (e.g. MFA) if needed
@@ -38,7 +35,7 @@ export const useGoogleAuth = () => {
         } finally {
             setIsLoading(false);
         }
-    }, []);
+    }, [router, startOAuthFlow]);
 
     return { signInWithGoogle, isLoading };
 };

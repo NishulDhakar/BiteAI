@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/Button';
+import { Colors } from '@/constants/colors';
 import { useAuth, useClerk } from '@clerk/clerk-expo';
 import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
@@ -23,7 +24,6 @@ export default function Index() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <View style={styles.header}>
-          {/* Placeholder logo */}
           <View style={styles.logoPlaceholder}>
             <Text style={styles.logoText}>AI Cal</Text>
           </View>
@@ -47,7 +47,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.neutral.white,
   },
   content: {
     flex: 1,
@@ -62,26 +62,26 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: '#2563EB',
+    backgroundColor: Colors.primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
   },
   logoText: {
-    color: 'white',
+    color: Colors.neutral.white,
     fontSize: 24,
     fontWeight: 'bold',
   },
   title: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#1F2937',
+    color: Colors.neutral[800],
     marginBottom: 10,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 18,
-    color: '#6B7280',
+    color: Colors.neutral[500],
     textAlign: 'center',
     lineHeight: 26,
   },

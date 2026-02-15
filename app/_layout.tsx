@@ -1,7 +1,7 @@
-import { UserSyncProvider } from "@/components/UserSyncProvider";
 import { tokenCache } from "@/utils/cache";
 import { ClerkLoaded, ClerkProvider } from "@clerk/clerk-expo";
 import { Stack } from "expo-router";
+import { UserSyncProvider } from "@/providers/UserSyncProvider";
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 

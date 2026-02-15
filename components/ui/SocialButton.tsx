@@ -1,4 +1,6 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Colors } from "@/constants/colors";
 
 interface SocialButtonProps {
     onPress: () => void;
@@ -6,52 +8,42 @@ interface SocialButtonProps {
 }
 
 export const SocialButton = ({ onPress, isLoading }: SocialButtonProps) => {
-    return (
-        <TouchableOpacity
-            onPress={onPress}
-            disabled={isLoading}
-            style={styles.button}
-        >
-            <View style={styles.content}>
-                {/* Placeholder Google Icon or use an image asset */}
-                <Image
-                    source={{ uri: "https://cdn-icons-png.flaticon.com/512/300/300221.png" }}
-                    style={styles.icon}
-                />
-                <Text style={styles.text}>Continue with Google</Text>
-            </View>
-        </TouchableOpacity>
-    );
+  return (
+    <TouchableOpacity onPress={onPress} disabled={isLoading} style={styles.button}>
+      <View style={styles.content}>
+        {isLoading ? (
+          <ActivityIndicator color={Colors.neutral[800]} />
+        ) : (
+          <>
+            <Ionicons name="logo-google" size={20} color={Colors.semantic.google} style={styles.icon} />
+            <Text style={styles.text}>Continue with Google</Text>
+          </>
+        )}
+      </View>
+    </TouchableOpacity>
+  );
 };
 
 const styles = StyleSheet.create({
-    button: {
-        height: 50,
-        borderRadius: 12,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 15,
-        backgroundColor: '#FFFFFF',
-        borderWidth: 1,
-        borderColor: '#E5E7EB',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.05,
-        shadowRadius: 2,
-        elevation: 1,
-    },
-    content: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    icon: {
-        width: 20,
-        height: 20,
-        marginRight: 10,
-    },
-    text: {
-        fontSize: 16,
-        fontWeight: '500',
-        color: '#1F2937',
-    },
+  button: {
+    height: 56,
+    borderRadius: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Colors.neutral.white,
+    borderWidth: 1,
+    borderColor: Colors.neutral[200],
+  },
+  content: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  icon: {
+    marginRight: 10,
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: Colors.neutral[800],
+  },
 });

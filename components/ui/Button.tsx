@@ -1,5 +1,6 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Colors } from '@/constants/colors';
 
 interface ButtonProps {
     title: string;
@@ -11,22 +12,22 @@ interface ButtonProps {
 
 export const Button = forwardRef<React.ElementRef<typeof TouchableOpacity>, ButtonProps>(({ title, onPress, isLoading, variant = 'primary', disabled }, ref) => {
     const getBackgroundColor = () => {
-        if (disabled) return '#E5E7EB';
+        if (disabled) return Colors.neutral[200];
         switch (variant) {
-            case 'primary': return '#2563EB'; // Blue-600
-            case 'secondary': return '#4B5563'; // Gray-600
+            case 'primary': return Colors.primary[500];
+            case 'secondary': return Colors.neutral[600];
             case 'outline': return 'transparent';
-            default: return '#2563EB';
+            default: return Colors.primary[500];
         }
     };
 
     const getTextColor = () => {
-        if (disabled) return '#9CA3AF';
+        if (disabled) return Colors.neutral[400];
         switch (variant) {
-            case 'primary': return '#FFFFFF';
-            case 'secondary': return '#FFFFFF';
-            case 'outline': return '#2563EB';
-            default: return '#FFFFFF';
+            case 'primary': return Colors.neutral.white;
+            case 'secondary': return Colors.neutral.white;
+            case 'outline': return Colors.primary[500];
+            default: return Colors.neutral.white;
         }
     };
 
@@ -50,31 +51,33 @@ export const Button = forwardRef<React.ElementRef<typeof TouchableOpacity>, Butt
     );
 });
 
+Button.displayName = 'Button';
+
 const styles = StyleSheet.create({
     button: {
-        height: 50,
-        borderRadius: 12,
+        height: 56,
+        borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 20,
-        marginTop: 10,
-        shadowColor: '#000',
+        marginTop: 12,
+        shadowColor: Colors.neutral.black,
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: 8,
         },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-        elevation: 3,
+        shadowOpacity: 0.16,
+        shadowRadius: 16,
+        elevation: 5,
     },
     outlineButton: {
         borderWidth: 1,
-        borderColor: '#2563EB',
+        borderColor: Colors.primary[500],
         shadowColor: 'transparent',
         elevation: 0,
     },
     text: {
         fontSize: 16,
-        fontWeight: '600',
+        fontWeight: '700',
     },
 });
