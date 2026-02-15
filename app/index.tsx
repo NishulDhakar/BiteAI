@@ -37,10 +37,8 @@ export default function Index() {
         if (userSnap.exists()) {
           const userData = userSnap.data();
           if (userData.isOnboardingComplete) {
-            // User is set up. Allow rendering dashboard.
-            setHasCheckedOnboarding(true);
+            router.replace("/(tabs)");
           } else {
-            // Data exists but onboarding incomplete.
             router.replace("/onboarding");
           }
         } else {

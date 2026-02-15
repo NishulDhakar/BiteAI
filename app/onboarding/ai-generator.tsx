@@ -57,7 +57,7 @@ export default function AiGenerator() {
     const handleCompletion = async () => {
         // Small delay to show the last checkmark
         setTimeout(() => {
-            router.replace("/");
+            router.replace("/(tabs)");
         }, 1500);
     };
 
@@ -67,7 +67,6 @@ export default function AiGenerator() {
                 Alert.alert("Configuration Error", "Gemini API Key is missing.");
                 return;
             }
-
             const jsonValue = await AsyncStorage.getItem("onboardingData");
             if (!jsonValue) {
                 Alert.alert("Error", "No profile data found. Please try again.");
