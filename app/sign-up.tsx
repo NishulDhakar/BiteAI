@@ -83,7 +83,7 @@ export default function SignUp() {
       if (completeSignUp.status === "complete") {
         if (setActive) {
           await setActive({ session: completeSignUp.createdSessionId });
-          router.replace("/");
+          router.replace("/onboarding");
         }
       } else {
         Alert.alert("Verification pending", "Please finish the remaining verification steps.");
