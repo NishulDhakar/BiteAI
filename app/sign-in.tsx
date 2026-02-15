@@ -46,7 +46,7 @@ export default function SignIn() {
 
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
-        router.replace("/");
+        router.replace("/onboarding");
       } else {
         Alert.alert(
           "Additional verification required",
