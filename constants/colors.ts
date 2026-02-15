@@ -1,0 +1,41 @@
+export const Colors = {
+  primary: {
+    50: "#F1FAF4",
+    100: "#D9EFE0",
+    200: "#B4DFC2",
+    300: "#8BCFA3",
+    400: "#54A972",
+    500: "#298F50",
+    600: "#237B45",
+    700: "#1D663A",
+    800: "#16522E",
+    900: "#103E22",
+  },
+  neutral: {
+    white: "#FFFFFF",
+    black: "#000000",
+    50: "#F8FAFC",
+    100: "#F1F5F9",
+    200: "#E5E7EB",
+    400: "#9CA3AF",
+    500: "#6B7280",
+    600: "#4B5563",
+    700: "#374151",
+    800: "#1F2937",
+    900: "#111827",
+  },
+  brand: {
+    screenBlue: "#F4F7FF",
+    screenBlueAlt: "#F4F8FF",
+    glowBlue: "#DCE9FF",
+    glowBlueAlt: "#E2EAFF",
+    glowMint: "#D7F6EC",
+    glowMintAlt: "#D6F7EE",
+  },
+  semantic: {
+    google: "#DB4437",
+  },
+  border: {
+    soft: "#EEF2FF",
+  },
+};
