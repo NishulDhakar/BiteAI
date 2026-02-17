@@ -3,8 +3,8 @@
 BiteAI is an advanced application designed to enhance your dietary tracking experience. With user-friendly features and precise analytics, it assists users in achieving their nutritional goals effectively.
 
 # Project Overview
-[Nishuldhakar_React_native (1).pdf](https://github.com/user-attachments/files/25360730/Nishuldhakar_React_native.1.pdf)
 
+<img width="979" height="547" alt="Screenshot 2026-02-17 at 2 52 53 PM" src="https://github.com/user-attachments/assets/0c9f8482-29f8-47c0-842b-f0a6bf86cce2" />
 
 ## Features
 - **Food Logging**: Easily log meals and snacks with a database of common food items.
